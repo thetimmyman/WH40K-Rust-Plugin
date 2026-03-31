@@ -1,0 +1,7 @@
+# Oxide config generated on the server — not part of the plugin source
+oxide/config/WH40K.json
+oxide/data/WH40K/
+
+# IDE
+.vs/
+*.user
