@@ -1,0 +1,79 @@
+name: Bug Report
+description: Report a problem with the WH40K plugin
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please fill out as much as you can — especially the Oxide error log, which is almost always the fastest path to a fix.
+
+  - type: dropdown
+    id: plugin_version
+    attributes:
+      label: Plugin Version
+      description: Which version of WH40K.cs are you running? Check the first line of the file or `oxide.plugins` output.
+      options:
+        - "0.4.2"
+        - "0.4.1"
+        - "0.3.x"
+        - "Older / unknown"
+    validations:
+      required: true
+
+  - type: input
+    id: oxide_version
+    attributes:
+      label: Oxide Version
+      description: Run `version` in the server console and paste the Oxide line.
+      placeholder: "Oxide.Rust 2.0.XXXX"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: companion_plugins
+    attributes:
+      label: Companion Plugins Installed
+      description: Check all that are present in your oxide/plugins/ folder.
+      options:
+        - label: Economics
+        - label: ServerRewards
+        - label: XPerience
+        - label: ZoneManager
+        - label: RaidableBases
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: What did you do right before the bug occurred?
+      placeholder: |
+        1. Run `wh40k.event tyranid_wave`
+        2. Kill all spawned NPCs
+        3. Event never ends / no reward given
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should have happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Oxide Error Log
+      description: Paste the relevant section from `oxide/logs/oxide/oxide_YYYY-MM-DD.txt`. Remove any server IPs or personal info.
+      render: text
+    validations:
+      required: false

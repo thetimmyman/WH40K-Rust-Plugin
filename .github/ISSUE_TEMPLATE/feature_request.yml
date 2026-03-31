@@ -1,0 +1,68 @@
+name: Feature Request
+description: Suggest a new feature or improvement
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got an idea? Check [PLAN.md](../blob/master/PLAN.md) first — it may already be on the roadmap. If it is, feel free to open a request to signal interest or volunteer to implement it.
+
+  - type: dropdown
+    id: feature_type
+    attributes:
+      label: Feature Type
+      options:
+        - "New quest / objective type"
+        - "New NPC archetype or faction"
+        - "New event"
+        - "Economy / shop integration"
+        - "New player or admin command"
+        - "Balance tuning"
+        - "Polish / immersion (flavor text, UI, announcements)"
+        - "Bug fix adjacent"
+        - "Other"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: in_roadmap
+    attributes:
+      label: Is this already in the roadmap?
+      description: Check PLAN.md phases 3–5 and the Backlog section.
+      options:
+        - "Yes — Phase 3"
+        - "Yes — Phase 4"
+        - "Yes — Phase 5"
+        - "Yes — Backlog"
+        - "No — this is new"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What do you want to add or change? Be as specific as you can — commands, config keys, behavior.
+      placeholder: |
+        Add a `zone_visited` quest objective type that tracks when a player enters each faction zone.
+        Config: { "Type": "zone_visited", "Target": "tyranids", "Count": 3 }
+        Would require an OnPlayerTick proximity check against zone centers.
+    validations:
+      required: true
+
+  - type: textarea
+    id: theme_fit
+    attributes:
+      label: How does it fit the WH40K theme?
+      description: This is a lore-flavored PvE mod — help us understand the thematic angle.
+      placeholder: "Exploration missions are a classic 40K trope — 'Recon Mission: Survey Tyranid Nest Positions'"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: willing_to_implement
+    attributes:
+      label: Contribution
+      options:
+        - label: I'm willing to implement this and open a PR
